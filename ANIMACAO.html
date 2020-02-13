@@ -1,0 +1,2116 @@
+<html>
+
+<head>
+    <title>Animation</title>
+    <script>
+        var canvas, context, imgSprite;
+        var cenas = [];
+        var imagens = [];
+        var imagem;
+        var aux = [];
+        var QTD_CENA = 1;
+        var QTD_IMG = 16;
+        var IMAGEM_X = 80;
+        var IMAGEM_Y = 64;
+        const TEMPO_FRAME = 1000;
+        var intervalID;
+        var somMusica;
+
+        function Iniciar() {
+
+            canvas = document.getElementById('canvas');
+            context = canvas.getContext('2d');
+
+            for (var i = 1; i <= QTD_CENA; i++) {
+                for (var j = 1; j <= QTD_IMG; j++) {
+                    imagens[j] = new Image();
+                    imagens[j].src = "cena (" + i + ")/" + j + ".png";
+                    
+                }
+                cenas[i] = imagens;
+            }
+            ConfiguraSons();
+            
+
+            Loop(Desenhar00c1);
+
+        }
+
+        function ConfiguraSons() {
+          
+           
+            somMusica = new Audio();
+            somMusica.src = './sound/audio.mpeg';
+            somMusica.play();    
+            
+        }
+
+        
+
+        function Loop(funcao) {
+            clearInterval(intervalID);
+            intervalID = setInterval(funcao, 394);
+
+        }
+        // cena 1
+        function Desenhar00c1() {
+            aux = cenas[1];
+            context.drawImage(aux[16], 0, 0); //fundo
+            setTimeout(Loop(Desenhar01c1), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar01c1() {
+            aux = cenas[1];
+            context.drawImage(aux[16], 0, 0); //fundo
+            setTimeout(Loop(Desenhar02c1), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar02c1() {
+            aux = cenas[1];
+            context.drawImage(aux[16], 0, 0); //fundo
+            setTimeout(Loop(Desenhar03c1), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar03c1() {
+            aux = cenas[1];
+            context.drawImage(aux[16], 0, 0); //fundo
+            setTimeout(Loop(Desenhar04c1), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar04c1() {
+
+            aux = cenas[1];
+            context.drawImage(aux[15], 0, 0); //fundo
+            setTimeout(Loop(Desenhar05c1), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar05c1() {
+
+            aux = cenas[1];
+            context.drawImage(aux[15], 0, 0); //fundo
+            setTimeout(Loop(Desenhar06c1), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar06c1() {
+
+            aux = cenas[1];
+            context.drawImage(aux[15], 0, 0); //fundo
+            setTimeout(Loop(Desenhar1c1), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar1c1() {
+
+            aux = cenas[1];
+            context.drawImage(aux[2], 0, 0); //fundo
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], 0, 170); //cara
+            context.drawImage(aux[7], 10, 180); //grama
+            //context.drawImage(aux[8], 0, 0);//raio
+
+            setTimeout(Loop(Desenhar2c1), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c1() {
+            context.drawImage(aux[3], 20, 50);
+            context.drawImage(aux[1], 0, 0);
+            context.drawImage(aux[9], 0, 185);
+            context.drawImage(aux[10], -10, 170);
+            context.drawImage(aux[11], 30, 0);
+            setTimeout(Loop(Desenhar3c1), TEMPO_FRAME);
+        }
+
+        function Desenhar3c1() {
+            context.drawImage(aux[4], 10, 45);
+            context.drawImage(aux[1], 0, 0);
+            context.drawImage(aux[12], 20, 170);
+            context.drawImage(aux[13], 10, 200);
+            //context.drawImage(aux[14], 0, 0);
+            setTimeout(Loop(Desenhar1c2), TEMPO_FRAME);
+        }
+        // cena 1
+        // cena 2    
+        function Desenhar1c2() {
+
+            for (var j = 1; j <= 62; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (2)/" + j + ".png";
+            }
+            cenas[2] = imagens;
+
+            aux = cenas[2];
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[3], 0, 148); //cara
+            context.drawImage(aux[33], 40, 200); //grama
+            setTimeout(Loop(Desenhar2c2), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[4], 5, 162); //cara
+            context.drawImage(aux[34], 40, 212); //grama
+            setTimeout(Loop(Desenhar3c2), TEMPO_FRAME);
+        }
+
+        function Desenhar3c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[5], -10, 162); //cara
+            context.drawImage(aux[35], 40, 200); //grama
+            setTimeout(Loop(Desenhar4c2), TEMPO_FRAME);
+        }
+
+        function Desenhar4c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[6], 40, 160); //cara
+            context.drawImage(aux[36], 40, 216); //grama
+            setTimeout(Loop(Desenhar5c2), TEMPO_FRAME);
+        }
+
+        function Desenhar5c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[7], 42, 176); //cara
+            context.drawImage(aux[37], 45, 219); //grama
+            setTimeout(Loop(Desenhar6c2), TEMPO_FRAME);
+        }
+
+        function Desenhar6c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[8], 42, 160); //cara
+            context.drawImage(aux[38], 37, 213); //grama
+            setTimeout(Loop(Desenhar7c2), TEMPO_FRAME);
+        }
+
+        function Desenhar7c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[9], 42, 162); //cara
+            context.drawImage(aux[39], 42, 218); //grama
+            setTimeout(Loop(Desenhar8c2), TEMPO_FRAME);
+        }
+
+        function Desenhar8c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[10], 42, 200); //cara
+            context.drawImage(aux[40], 42, 218); //grama
+            setTimeout(Loop(Desenhar9c2), TEMPO_FRAME);
+        }
+
+        function Desenhar9c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[11], 42, 177); //cara
+            context.drawImage(aux[41], 42, 213); //grama
+            setTimeout(Loop(Desenhar10c2), TEMPO_FRAME);
+        }
+
+        function Desenhar10c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[12], 43, 198); //cara
+            context.drawImage(aux[42], 44, 209); //grama
+            setTimeout(Loop(Desenhar11c2), TEMPO_FRAME);
+        }
+
+        function Desenhar11c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[13], 43, 160); //cara
+            context.drawImage(aux[43], 41, 205); //grama
+            setTimeout(Loop(Desenhar12c2), TEMPO_FRAME);
+        }
+
+        function Desenhar12c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[14], 43, 195); //cara
+            context.drawImage(aux[44], 41, 202); //grama
+            setTimeout(Loop(Desenhar13c2), TEMPO_FRAME);
+        }
+
+        function Desenhar13c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[15], 43, 161); //cara
+            context.drawImage(aux[45], 46, 213); //grama
+            setTimeout(Loop(Desenhar14c2), TEMPO_FRAME);
+        }
+
+        function Desenhar14c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[16], 43, 190); //cara
+            context.drawImage(aux[46], 41, 212); //grama
+            setTimeout(Loop(Desenhar15c2), TEMPO_FRAME);
+        }
+
+        function Desenhar15c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[17], 43, 160); //cara
+            context.drawImage(aux[47], 33, 208); //grama
+            setTimeout(Loop(Desenhar16c2), TEMPO_FRAME);
+        }
+
+        function Desenhar16c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[18], 43, 177); //cara
+            context.drawImage(aux[48], 43, 215); //grama
+            setTimeout(Loop(Desenhar17c2), TEMPO_FRAME);
+        }
+
+        function Desenhar17c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[19], 42, 170); //cara
+            context.drawImage(aux[49], 42, 220); //grama
+            setTimeout(Loop(Desenhar18c2), TEMPO_FRAME);
+        }
+
+        function Desenhar18c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[20], 42, 210); //cara
+            context.drawImage(aux[50], 46, 221); //grama
+            setTimeout(Loop(Desenhar19c2), TEMPO_FRAME);
+        }
+
+        function Desenhar19c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[21], 42, 170); //cara
+            context.drawImage(aux[51], 37, 215); //grama
+            setTimeout(Loop(Desenhar20c2), TEMPO_FRAME);
+        }
+
+        function Desenhar20c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[22], 41, 170); //cara
+            context.drawImage(aux[52], 39, 221); //grama
+            setTimeout(Loop(Desenhar21c2), TEMPO_FRAME);
+        }
+
+        function Desenhar21c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[23], 41, 110); //cara
+            context.drawImage(aux[53], 39, 159); //grama
+            setTimeout(Loop(Desenhar22c2), TEMPO_FRAME);
+        }
+
+        function Desenhar22c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[24], 41, 110); //cara
+            context.drawImage(aux[54], 35, 157); //grama
+            setTimeout(Loop(Desenhar23c2), TEMPO_FRAME);
+        }
+
+        function Desenhar23c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[25], 41, 103); //cara
+            context.drawImage(aux[55], 35, 153); //grama
+            setTimeout(Loop(Desenhar24c2), TEMPO_FRAME);
+        }
+
+        function Desenhar24c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[26], 41, 103); //cara
+            context.drawImage(aux[56], 35, 153); //grama
+            setTimeout(Loop(Desenhar25c2), TEMPO_FRAME);
+        }
+
+        function Desenhar25c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[27], 41, 120); //cara
+            context.drawImage(aux[57], 38, 105); //grama
+            setTimeout(Loop(Desenhar26c2), TEMPO_FRAME);
+        }
+
+        function Desenhar26c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[28], 41, 80); //cara
+            context.drawImage(aux[58], 40, 145); //grama
+            setTimeout(Loop(Desenhar27c2), TEMPO_FRAME);
+        }
+
+        function Desenhar27c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[29], 41, 118); //cara
+            context.drawImage(aux[59], 40, 128); //grama
+            setTimeout(Loop(Desenhar28c2), TEMPO_FRAME);
+        }
+
+        function Desenhar28c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[30], 41, 88); //cara
+            context.drawImage(aux[60], 40, 135); //grama
+            setTimeout(Loop(Desenhar29c2), TEMPO_FRAME);
+        }
+
+        function Desenhar29c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[31], 41, 113); //cara
+            context.drawImage(aux[61], 44, 130); //grama
+            setTimeout(Loop(Desenhar30c2), TEMPO_FRAME);
+        }
+
+        function Desenhar30c2() {
+            context.drawImage(aux[1], 0, 120); //fundo
+            context.drawImage(aux[2], 0, -150); //escada
+            context.drawImage(aux[32], 44, 113); //cara
+            context.drawImage(aux[62], 47, 124); //grama
+            setTimeout(Loop(Desenhar1c3), TEMPO_FRAME);
+        }
+        // cena 2    
+        // cena 3  
+        function Desenhar1c3() {
+
+            for (var j = 1; j <= 16; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (3)/" + j + ".png";
+            }
+            cenas[3] = imagens;
+
+            aux = cenas[3];
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(aux[1], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c3), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c3() {
+            context.drawImage(aux[2], -5, 5); //cara
+            setTimeout(Loop(Desenhar3c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c3() {
+            context.drawImage(aux[3], -5, 5); //cara
+            setTimeout(Loop(Desenhar4c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c3() {
+            context.drawImage(aux[4], -5, 7); //cara
+            setTimeout(Loop(Desenhar5c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c3() {
+            context.drawImage(aux[5], -5, 7); //cara
+            setTimeout(Loop(Desenhar6c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c3() {
+            context.drawImage(aux[6], -5, 5); //cara
+            setTimeout(Loop(Desenhar7c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c3() {
+            context.drawImage(aux[7], -5, 5); //cara
+            setTimeout(Loop(Desenhar8c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c3() {
+            context.drawImage(aux[15], 0, 120); //fundo
+            context.drawImage(aux[16], 0, -150); //escada
+            context.drawImage(aux[8], -5, 70); //cara
+            setTimeout(Loop(Desenhar9c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c3() {
+            context.drawImage(aux[15], 0, 120); //fundo
+            context.drawImage(aux[16], 0, -150); //escada
+            context.drawImage(aux[9], -5, 70); //cara
+            setTimeout(Loop(Desenhar10c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c3() {
+            context.drawImage(aux[15], 0, 120); //fundo
+            context.drawImage(aux[16], 0, -150); //escada
+            context.drawImage(aux[10], -5, 78); //cara
+            setTimeout(Loop(Desenhar11c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar11c3() {
+            context.drawImage(aux[15], 0, 120); //fundo
+            context.drawImage(aux[16], 0, -150); //escada
+            context.drawImage(aux[11], -5, 72); //cara
+            setTimeout(Loop(Desenhar12c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar12c3() {
+            context.drawImage(aux[15], 0, 120); //fundo
+            context.drawImage(aux[16], 0, -150); //escada
+            context.drawImage(aux[12], -5, 72); //cara
+            setTimeout(Loop(Desenhar13c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar13c3() {
+            context.drawImage(aux[15], 0, 120); //fundo
+            context.drawImage(aux[16], 0, -150); //escada
+            context.drawImage(aux[13], -5, 72); //cara
+            setTimeout(Loop(Desenhar14c3), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar14c3() {
+            context.drawImage(aux[15], 0, 120); //fundo
+            context.drawImage(aux[16], 0, -150); //escada
+            context.drawImage(aux[14], -5, 71); //cara
+            setTimeout(Loop(Desenhar1c4), TEMPO_FRAME); //duração do frame
+        }
+        // cena 3    
+        // cena 4  
+        function Desenhar1c4() {
+
+            for (var j = 1; j <= 15; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (4)/" + j + ".png";
+            }
+            cenas[4] = imagens;
+
+            aux = cenas[4];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], -200, 140); //cara
+            setTimeout(Loop(Desenhar2c4), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], -200, 140); //cara
+            setTimeout(Loop(Desenhar3c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], -160, 110); //cara
+            setTimeout(Loop(Desenhar4c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], -160, 105); //cara
+            setTimeout(Loop(Desenhar5c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], -160, 105); //cara
+            setTimeout(Loop(Desenhar6c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], -160, 105); //cara
+            setTimeout(Loop(Desenhar7c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], -160, 105); //cara
+            setTimeout(Loop(Desenhar8c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[13], -160, 105); //cara
+            setTimeout(Loop(Desenhar9c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[14], -160, 110); //cara
+            setTimeout(Loop(Desenhar10c4), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c4() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[15], -100, 106); //cara
+            setTimeout(Loop(Desenhar1c5), TEMPO_FRAME); //duração do frame
+        }
+
+        // cena 4  
+        // cena 5
+        function Desenhar1c5() {
+
+            for (var j = 1; j <= 9; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (5)/" + j + ".png";
+            }
+            cenas[5] = imagens;
+
+            aux = cenas[5];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 8); //cara
+            setTimeout(Loop(Desenhar2c5), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c5() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], 0, -2); //cara
+            setTimeout(Loop(Desenhar3c5), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c5() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[6], 0, 8); //cara
+            setTimeout(Loop(Desenhar4c5), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c5() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[7], 0, 11); //cara
+            setTimeout(Loop(Desenhar5c5), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c5() {
+            context.drawImage(aux[3], 0, 0); //escada
+            context.drawImage(aux[8], 0, 0); //cara
+            setTimeout(Loop(Desenhar6c5), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c5() {
+            context.drawImage(aux[3], 0, 0); //escada
+            context.drawImage(aux[9], 0, 2); //cara
+            setTimeout(Loop(Desenhar1c6), TEMPO_FRAME); //duração do frame
+        }
+        // cena 5
+        // cena 6
+        function Desenhar1c6() {
+
+            for (var j = 1; j <= 8; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (6)/" + j + ".png";
+            }
+            cenas[6] = imagens;
+
+            aux = cenas[6];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c6), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c6() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 2, -1); //cara
+            setTimeout(Loop(Desenhar3c6), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c6() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 5); //cara
+            setTimeout(Loop(Desenhar4c6), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c6() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], 0, 10); //cara
+            setTimeout(Loop(Desenhar5c6), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c6() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], 0, 2); //cara
+            setTimeout(Loop(Desenhar6c6), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c6() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, 5); //cara
+            setTimeout(Loop(Desenhar7c6), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c6() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], 0, 5); //cara
+            setTimeout(Loop(Desenhar1c7), TEMPO_FRAME); //duração do frame
+        }
+        // cena 6
+        // cena 7
+        function Desenhar1c7() {
+
+            for (var j = 1; j <= 11; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (7)/" + j + ".png";
+            }
+            cenas[7] = imagens;
+
+            aux = cenas[7];
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c7), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c7() {
+            context.drawImage(aux[3], 0, 0); //cara
+            setTimeout(Loop(Desenhar3c7), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c7() {
+            context.drawImage(aux[4], 0, 0); //cara
+            setTimeout(Loop(Desenhar4c7), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c7() {
+            context.drawImage(aux[5], 0, 0); //cara
+            setTimeout(Loop(Desenhar5c7), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c7() {
+            context.drawImage(aux[6], 0, 0); //cara
+            setTimeout(Loop(Desenhar6c7), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c7() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, -4); //cara
+            context.drawImage(aux[8], 0, 0); //tronco
+            setTimeout(Loop(Desenhar7c7), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c7() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, -4); //cara
+            context.drawImage(aux[9], 0, 0); //tronco
+            setTimeout(Loop(Desenhar8c7), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c7() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, -4); //cara
+            context.drawImage(aux[10], 0, 0); //tronco
+            setTimeout(Loop(Desenhar9c7), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c7() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, -4); //cara
+            context.drawImage(aux[11], 0, 0); //tronco
+            setTimeout(Loop(Desenhar1c8), TEMPO_FRAME); //duração do frame
+        }
+        // cena 7
+        // cena 8
+        function Desenhar1c8() {
+
+            for (var j = 1; j <= 12; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (8)/" + j + ".png";
+            }
+            cenas[8] = imagens;
+
+            aux = cenas[8];
+            context.drawImage(aux[3], 0, 0); //tronco
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c8), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c8() {
+            context.drawImage(aux[4], 0, 20); //tronco
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar3c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c8() {
+            context.drawImage(aux[5], 0, 0); //tronco
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar4c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c8() {
+            context.drawImage(aux[6], 0, 0); //tronco
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar5c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c8() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], -2, -30); //cara
+            setTimeout(Loop(Desenhar6c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c8() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], 0, -40); //cara
+            setTimeout(Loop(Desenhar7c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c8() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[9], 0, -35); //cara
+            setTimeout(Loop(Desenhar8c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c8() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[10], 0, -32); //cara
+            setTimeout(Loop(Desenhar9c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c8() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[11], 0, -40); //cara
+            setTimeout(Loop(Desenhar10c8), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c8() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[12], 0, -36); //cara
+            setTimeout(Loop(Desenhar1c9), TEMPO_FRAME); //duração do frame
+        }
+        // cena 8
+        //cena9
+        function Desenhar1c9() {
+
+            for (var j = 1; j <= 4; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (9)/" + j + ".png";
+            }
+            cenas[9] = imagens;
+
+            aux = cenas[9];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c9), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c9() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 0, 0); //cara
+            setTimeout(Loop(Desenhar3c9), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c9() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 0); //cara
+            setTimeout(Loop(Desenhar1c10), TEMPO_FRAME); //duração do frame
+        }
+        //cena9
+
+        //cena10
+        function Desenhar1c10() {
+
+            for (var j = 1; j <= 4; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (10)/" + j + ".png";
+            }
+            cenas[10] = imagens;
+
+            aux = cenas[10];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c10), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c10() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 0, 0); //cara
+            setTimeout(Loop(Desenhar3c10), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c10() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 0); //cara
+            setTimeout(Loop(Desenhar1c11), TEMPO_FRAME); //duração do frame
+        }
+
+        //cena10
+        // cena 11
+        function Desenhar1c11() {
+
+            for (var j = 1; j <= 11; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (11)/" + j + ".png";
+            }
+            cenas[11] = imagens;
+
+            aux = cenas[11];
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c11), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar2c11() {
+            context.drawImage(aux[3], -18, 0); //cara
+            context.drawImage(aux[6], 0, 30); //pé
+            setTimeout(Loop(Desenhar3c11), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c11() {
+            context.drawImage(aux[4], -180, 0); //cara
+            context.drawImage(aux[6], 0, 30); //pé
+            setTimeout(Loop(Desenhar4c11), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c11() {
+            context.drawImage(aux[5], -180, 0); //cara
+            context.drawImage(aux[6], 0, 30); //pé
+            setTimeout(Loop(Desenhar5c11), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c11() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, 0); //cara
+            setTimeout(Loop(Desenhar6c11), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c11() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], 0, 0); //cara
+            setTimeout(Loop(Desenhar7c11), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c11() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[9], 0, 0); //cara
+            setTimeout(Loop(Desenhar8c11), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c11() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[10], 12, 42); //cara
+            setTimeout(Loop(Desenhar9c11), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c11() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[11], 12, 40); //cara
+            setTimeout(Loop(Desenhar1c12), TEMPO_FRAME); //duração do frame
+        }
+        // cena 11
+        //cena12
+
+        function Desenhar1c12() {
+
+            for (var j = 1; j <= 11; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (12)/" + j + ".png";
+            }
+            cenas[12] = imagens;
+
+            aux = cenas[12];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], -4, 40); //caras
+            setTimeout(Loop(Desenhar2c12), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], -4, 40); //caras
+            setTimeout(Loop(Desenhar3c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], -4, 40); //caras
+            setTimeout(Loop(Desenhar4c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], -4, 40); //caras
+            setTimeout(Loop(Desenhar5c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], -4, 40); //caras
+            setTimeout(Loop(Desenhar6c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 40, 40); //caras
+            setTimeout(Loop(Desenhar7c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], 40, 40); //caras
+            setTimeout(Loop(Desenhar8c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[9], 40, 40); //caras
+            setTimeout(Loop(Desenhar9c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[10], 40, 40); //caras
+            setTimeout(Loop(Desenhar10c12), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c12() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[11], 40, 40); //caras
+            setTimeout(Loop(Desenhar1c13), TEMPO_FRAME); //duração do frame
+        }
+        //cena12
+        //cena13
+
+        function Desenhar1c13() {
+
+            for (var j = 1; j <= 4; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (13)/" + j + ".png";
+            }
+            cenas[13] = imagens;
+
+            aux = cenas[13];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], 0, 30); //caras
+            setTimeout(Loop(Desenhar2c13), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c13() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 0, 30); //caras
+            setTimeout(Loop(Desenhar3c13), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c13() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 30); //caras
+            setTimeout(Loop(Desenhar1c14), TEMPO_FRAME); //duração do frame
+        }
+        //cena13
+        //cena14
+
+        function Desenhar1c14() {
+
+            for (var j = 1; j <= 22; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (14)/" + j + ".png";
+            }
+            cenas[14] = imagens;
+
+            aux = cenas[14];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 8, -25); //caras
+            setTimeout(Loop(Desenhar2c14), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c14() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], -20, -25); //caras
+            setTimeout(Loop(Desenhar3c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c14() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], 20, -60); //caras
+            setTimeout(Loop(Desenhar4c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c14() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], 18, -65); //caras
+            setTimeout(Loop(Desenhar5c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c14() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 18, -65); //caras
+            setTimeout(Loop(Desenhar6c14), TEMPO_FRAME); //duração do frame
+        }
+
+
+        function Desenhar6c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[9], 0, 0); //caras
+            setTimeout(Loop(Desenhar7c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[10], 0, 0); //caras
+            setTimeout(Loop(Desenhar8c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[11], 0, 0); //caras
+            setTimeout(Loop(Desenhar9c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[12], 0, 0); //caras
+            setTimeout(Loop(Desenhar10c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[13], 0, 0); //caras
+            setTimeout(Loop(Desenhar11c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar11c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[14], 0, 0); //caras
+            setTimeout(Loop(Desenhar12c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar12c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[15], 0, 0); //caras
+            setTimeout(Loop(Desenhar13c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar13c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[16], 0, 0); //caras
+            setTimeout(Loop(Desenhar14c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar14c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[17], 0, 0); //caras
+            setTimeout(Loop(Desenhar15c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar15c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[18], 0, 0); //caras
+            setTimeout(Loop(Desenhar16c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar16c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[19], 0, 0); //caras
+            setTimeout(Loop(Desenhar17c14), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar17c14() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[20], 0, 0); //caras
+            setTimeout(Loop(Desenhar1c15), TEMPO_FRAME); //duração do frame
+        }
+        //cena14
+        // cena 15
+        function Desenhar1c15() {
+
+            for (var j = 1; j <= 18; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (15)/" + j + ".png";
+            }
+            cenas[15] = imagens;
+
+            aux = cenas[15];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c15), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar2c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 0, -2); //cara
+            setTimeout(Loop(Desenhar3c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 5); //cara
+            setTimeout(Loop(Desenhar4c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], 0, 9); //cara
+            setTimeout(Loop(Desenhar5c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], 0, 2); //cara
+            setTimeout(Loop(Desenhar6c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, 5); //cara
+            setTimeout(Loop(Desenhar7c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], 0, 5); //cara
+            setTimeout(Loop(Desenhar8c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[9], 5, -70); //cara
+            setTimeout(Loop(Desenhar9c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[10], 5, -80); //cara
+            setTimeout(Loop(Desenhar10c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[11], 5, -70); //cara
+            setTimeout(Loop(Desenhar11c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar11c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[12], 5, -70); //cara
+            setTimeout(Loop(Desenhar12c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar12c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[13], 5, -70); //cara
+            setTimeout(Loop(Desenhar13c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar13c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[14], 0, -80); //cara
+            setTimeout(Loop(Desenhar14c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar14c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[15], 0, -80); //cara
+            setTimeout(Loop(Desenhar15c15), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar15c15() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[16], 0, -80); //cara
+            setTimeout(Loop(Desenhar1c121), TEMPO_FRAME); //duração do frame
+        }
+
+        /* function Desenhar16c15(){ 
+            context.drawImage(aux[17], 0, 0);//cara
+            setTimeout(Loop(Desenhar17c15),TEMPO_FRAME);//duração do frame
+		}
+            
+        function Desenhar17c15(){ 
+            context.drawImage(aux[18], 0, 0);//cara
+            setTimeout(Loop(Desenhar1c19),TEMPO_FRAME);//duração do frame
+		}*/
+        // cena 15
+
+
+        // cena 16
+
+        function Desenhar1c121() {
+
+            for (var j = 1; j <= 11; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (12)/" + j + ".png";
+            }
+            cenas[12] = imagens;
+
+            aux = cenas[12];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], -4, 40); //caras
+            setTimeout(Loop(Desenhar2c121), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], -4, 40); //caras
+            setTimeout(Loop(Desenhar3c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], -4, 40); //caras
+            setTimeout(Loop(Desenhar4c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], -4, 40); //caras
+            setTimeout(Loop(Desenhar5c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], -4, 40); //caras
+            setTimeout(Loop(Desenhar6c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 40, 40); //caras
+            setTimeout(Loop(Desenhar7c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], 40, 40); //caras
+            setTimeout(Loop(Desenhar8c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[9], 40, 40); //caras
+            setTimeout(Loop(Desenhar9c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[10], 40, 40); //caras
+            setTimeout(Loop(Desenhar10c121), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c121() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[11], 40, 40); //caras
+            setTimeout(Loop(Desenhar1c131), TEMPO_FRAME); //duração do frame
+        }
+
+
+        function Desenhar1c131() {
+
+            for (var j = 1; j <= 4; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (13)/" + j + ".png";
+            }
+            cenas[13] = imagens;
+
+            aux = cenas[13];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], 0, 30); //caras
+            setTimeout(Loop(Desenhar2c131), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c131() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 0, 30); //caras
+            setTimeout(Loop(Desenhar3c131), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c131() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 30); //caras
+            setTimeout(Loop(Desenhar1c141), TEMPO_FRAME); //duração do frame
+        }
+
+
+        function Desenhar1c141() {
+
+            for (var j = 1; j <= 22; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (14)/" + j + ".png";
+            }
+            cenas[14] = imagens;
+
+            aux = cenas[14];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 8, -25); //caras
+            setTimeout(Loop(Desenhar2c141), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c141() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], -20, -25); //caras
+            setTimeout(Loop(Desenhar3c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c141() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], 20, -60); //caras
+            setTimeout(Loop(Desenhar4c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c141() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], 18, -65); //caras
+            setTimeout(Loop(Desenhar5c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c141() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 18, -65); //caras
+            setTimeout(Loop(Desenhar6c141), TEMPO_FRAME); //duração do frame
+        }
+
+
+
+        function Desenhar6c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[9], 0, 0); //caras
+            setTimeout(Loop(Desenhar7c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[10], 0, 0); //caras
+            setTimeout(Loop(Desenhar8c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[11], 0, 0); //caras
+            setTimeout(Loop(Desenhar9c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[12], 0, 0); //caras
+            setTimeout(Loop(Desenhar10c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[13], 0, 0); //caras
+            setTimeout(Loop(Desenhar11c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar11c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[14], 0, 0); //caras
+            setTimeout(Loop(Desenhar12c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar12c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[15], 0, 0); //caras
+            setTimeout(Loop(Desenhar13c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar13c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[16], 0, 0); //caras
+            setTimeout(Loop(Desenhar14c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar14c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[17], 0, 0); //caras
+            setTimeout(Loop(Desenhar15c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar15c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[18], 0, 0); //caras
+            setTimeout(Loop(Desenhar16c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar16c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[19], 0, 0); //caras
+            setTimeout(Loop(Desenhar17c141), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar17c141() {
+            context.drawImage(aux[2], 0, 0); //escada
+            context.drawImage(aux[20], 0, 0); //caras
+            setTimeout(Loop(Desenhar1c17), TEMPO_FRAME); //duração do frame
+        }
+
+        // cena 16
+        // cena 17
+        function Desenhar1c17() {
+
+
+            context.drawImage(aux[21], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c17), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar2c17() {
+
+
+            context.drawImage(aux[21], 0, 0); //cara
+            setTimeout(Loop(Desenhar1c18), TEMPO_FRAME); //duração do frame   
+        }
+        // cena 17
+        // cena 18
+        function Desenhar1c18() {
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(aux[22], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c18), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar2c18() {
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(aux[22], 0, 0); //cara
+            setTimeout(Loop(Desenhar1c19), TEMPO_FRAME); //duração do frame   
+        }
+        // cena 18
+
+        // cena 19
+        function Desenhar1c19() {
+
+            for (var j = 1; j <= 48; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (19)/" + j + ".png";
+            }
+            cenas[19] = imagens;
+
+            aux = cenas[19];
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar2c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[3], 0, 0); //cara
+            setTimeout(Loop(Desenhar3c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar3c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 0); //cara
+            setTimeout(Loop(Desenhar4c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar4c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], 0, 0); //cara
+            setTimeout(Loop(Desenhar5c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar5c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], 0, 0); //cara
+            setTimeout(Loop(Desenhar6c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar6c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[7], 0, 10); //cara
+            setTimeout(Loop(Desenhar7c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar7c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[8], 0, 0); //cara
+            setTimeout(Loop(Desenhar8c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar8c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[9], 0, 0); //cara
+            setTimeout(Loop(Desenhar9c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar9c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[10], 0, 0); //cara
+            setTimeout(Loop(Desenhar10c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar10c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[11], 0, 0); //cara
+            setTimeout(Loop(Desenhar11c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar11c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[12], 0, 10); //cara
+            setTimeout(Loop(Desenhar12c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar12c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[13], 0, 10); //cara
+            setTimeout(Loop(Desenhar13c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar13c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[14], 0, 10); //cara
+            setTimeout(Loop(Desenhar14c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar14c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[15], 0, 6); //cara
+            setTimeout(Loop(Desenhar15c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar15c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[16], 0, 10); //cara
+            setTimeout(Loop(Desenhar16c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar16c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[17], 0, 10); //cara
+            setTimeout(Loop(Desenhar17c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar17c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[18], 0, 10); //cara
+            setTimeout(Loop(Desenhar18c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar18c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[19], 0, 10); //cara
+            setTimeout(Loop(Desenhar19c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar19c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[20], 0, 10); //cara
+            setTimeout(Loop(Desenhar20c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar20c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[21], 0, 0); //cara
+            setTimeout(Loop(Desenhar21c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar21c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[22], 0, 10); //cara
+            setTimeout(Loop(Desenhar22c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar22c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[23], 0, 10); //cara
+            setTimeout(Loop(Desenhar23c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar23c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[24], 0, 10); //cara
+            setTimeout(Loop(Desenhar24c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar24c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[25], 0, 10); //cara
+            setTimeout(Loop(Desenhar25c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar25c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[26], 0, 10); //cara
+            setTimeout(Loop(Desenhar26c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar26c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[27], 0, 10); //cara
+            setTimeout(Loop(Desenhar27c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar27c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[28], 0, 10); //cara
+            setTimeout(Loop(Desenhar28c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar28c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[29], 0, 10); //cara
+            setTimeout(Loop(Desenhar29c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar29c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[30], 0, 20); //cara
+            setTimeout(Loop(Desenhar30c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar30c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[31], 0, 20); //cara
+            setTimeout(Loop(Desenhar31c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar31c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[32], 0, 20); //cara
+            setTimeout(Loop(Desenhar32c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar32c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[33], 0, 20); //cara
+            setTimeout(Loop(Desenhar33c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar33c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[34], 0, 20); //cara
+            setTimeout(Loop(Desenhar34c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar34c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[35], 0, 20); //cara
+            setTimeout(Loop(Desenhar35c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar35c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[36], 0, 20); //cara
+            setTimeout(Loop(Desenhar36c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar36c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[37], 0, 20); //cara
+            setTimeout(Loop(Desenhar37c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar37c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[38], 0, 30); //cara
+            setTimeout(Loop(Desenhar38c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar38c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[39], 0, 30); //cara
+            setTimeout(Loop(Desenhar39c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar39c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[40], 0, 30); //cara
+            setTimeout(Loop(Desenhar40c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar40c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[41], 0, 20); //cara
+            setTimeout(Loop(Desenhar41c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar41c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[42], 0, 30); //cara
+            setTimeout(Loop(Desenhar42c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar42c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[43], 0, 30); //cara
+            setTimeout(Loop(Desenhar43c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar43c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[44], 0, 30); //cara
+            setTimeout(Loop(Desenhar44c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar44c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[45], 0, 30); //cara
+            setTimeout(Loop(Desenhar45c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar45c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[46], 0, 30); //cara
+            setTimeout(Loop(Desenhar46c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar46c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[47], 0, 30); //cara
+            setTimeout(Loop(Desenhar47c19), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar47c19() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[48], 0, 30); //cara
+            setTimeout(Loop(Desenhar1c20), TEMPO_FRAME); //duração do frame   
+        }
+        // cena 19
+        //cena20
+
+        function Desenhar1c20() {
+
+            for (var j = 1; j <= 14; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (20)/" + j + ".png";
+            }
+            cenas[20] = imagens;
+
+            aux = cenas[20];
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[1], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c20), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[2], 0, 0); //caras
+            setTimeout(Loop(Desenhar3c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[3], 0, 0); //caras
+            setTimeout(Loop(Desenhar4c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[5], 0, 0); //caras
+            setTimeout(Loop(Desenhar5c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[6], 0, 0); //caras
+            setTimeout(Loop(Desenhar6c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c20() {
+            context.drawImage(aux[7], 0, 0); //caras
+            setTimeout(Loop(Desenhar7c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[8], 0, 0); //caras
+            setTimeout(Loop(Desenhar8c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[9], 0, 0); //caras
+            setTimeout(Loop(Desenhar9c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[10], 0, 0); //caras
+            setTimeout(Loop(Desenhar10c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[11], 0, 0); //caras
+            setTimeout(Loop(Desenhar11c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar11c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[12], 0, 0); //caras
+            setTimeout(Loop(Desenhar12c20), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar12c20() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[13], 0, 0); //caras
+            setTimeout(Loop(Desenhar1c21), TEMPO_FRAME); //duração do frame
+        }
+
+        //cena20
+
+        //cena21
+
+        function Desenhar1c21() {
+
+            for (var j = 1; j <= 14; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (21)/" + j + ".png";
+            }
+            cenas[21] = imagens;
+
+            aux = cenas[21];
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[1], 0, 0); //cara
+            setTimeout(Loop(Desenhar2c21), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[2], 0, 0); //caras
+            setTimeout(Loop(Desenhar3c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[3], 0, 0); //caras
+            setTimeout(Loop(Desenhar4c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[5], 0, 0); //caras
+            setTimeout(Loop(Desenhar5c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[6], 0, 0); //caras
+            setTimeout(Loop(Desenhar6c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar6c21() {
+            context.drawImage(aux[7], 0, 0); //caras
+            setTimeout(Loop(Desenhar7c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar7c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[8], 0, 0); //caras
+            setTimeout(Loop(Desenhar8c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar8c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[9], 0, 0); //caras
+            setTimeout(Loop(Desenhar9c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar9c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[10], 0, 0); //caras
+            setTimeout(Loop(Desenhar10c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar10c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[11], 0, 0); //caras
+            setTimeout(Loop(Desenhar11c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar11c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[12], 0, 0); //caras
+            setTimeout(Loop(Desenhar12c21), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar12c21() {
+            context.drawImage(aux[14], 0, 0); //fundo
+            context.drawImage(aux[13], 0, 0); //caras
+            setTimeout(Loop(Desenhar1c22), TEMPO_FRAME); //duração do frame
+        }
+        //cena 21
+        // cena 22
+        function Desenhar1c22() {
+
+            for (var j = 1; j <= 13; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (22)/" + j + ".png";
+            }
+            cenas[22] = imagens;
+
+            aux = cenas[22];
+            context.drawImage(aux[1], 0, -40); //escada
+            context.drawImage(aux[2], -75, 60); //cara
+            setTimeout(Loop(Desenhar2c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar2c22() {
+            context.drawImage(aux[1], 0, -40); //escada
+            context.drawImage(aux[3], -75, 60); //cara
+            setTimeout(Loop(Desenhar3c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar3c22() {
+            context.drawImage(aux[1], 0, -40); //escada
+            context.drawImage(aux[4], -75, 60); //cara
+            setTimeout(Loop(Desenhar4c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar4c22() {
+            context.drawImage(aux[1], 0, -40); //escada
+            context.drawImage(aux[5], -75, 50); //cara
+            setTimeout(Loop(Desenhar5c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar5c22() {
+            context.drawImage(aux[1], 0, -40); //escada
+            context.drawImage(aux[6], -75, 50); //cara
+            setTimeout(Loop(Desenhar6c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar6c22() {
+            context.drawImage(aux[7], 0, 0); //escada
+            context.drawImage(aux[8], 150, -130); //espelho
+            setTimeout(Loop(Desenhar7c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar7c22() {
+            context.drawImage(aux[7], 0, 0); //escada
+            context.drawImage(aux[8], 150, -130); //espelho
+            context.drawImage(aux[9], 150, -130); //espelho
+            setTimeout(Loop(Desenhar8c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar8c22() {
+            context.drawImage(aux[7], 0, 0); //escada
+            context.drawImage(aux[8], 100, -80); //espelho
+            context.drawImage(aux[10], 100, -80); //espelho
+            setTimeout(Loop(Desenhar9c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar9c22() {
+            context.drawImage(aux[7], 0, 0); //escada
+            context.drawImage(aux[8], 50, -30); //espelho
+            context.drawImage(aux[11], 50, -30); //espelho
+            setTimeout(Loop(Desenhar10c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar10c22() {
+            context.drawImage(aux[7], 0, 0); //escada
+            context.drawImage(aux[8], 0, 20); //espelho
+            context.drawImage(aux[12], 0, 20); //espelho
+            setTimeout(Loop(Desenhar11c22), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar11c22() {
+            context.drawImage(aux[7], 0, 0); //escada
+            context.drawImage(aux[8], -50, 70); //espelho
+            context.drawImage(aux[13], -50, 70); //espelho
+            setTimeout(Loop(Desenhar1c23), TEMPO_FRAME); //duração do frame   
+        }
+        // cena 22
+        // cena 23
+        function Desenhar1c23() {
+
+            for (var j = 1; j <= 6; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (23)/" + j + ".png";
+            }
+            cenas[23] = imagens;
+
+            aux = cenas[23];
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[2], -100, -30); //prancha
+            context.drawImage(aux[3], -100, -30); //cara
+            setTimeout(Loop(Desenhar2c23), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar2c23() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[4], 0, 17); //cara
+            setTimeout(Loop(Desenhar3c23), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar3c23() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[5], 0, 85); //cara
+            setTimeout(Loop(Desenhar4c23), TEMPO_FRAME); //duração do frame   
+        }
+
+        function Desenhar4c23() {
+            context.drawImage(aux[1], 0, 0); //escada
+            context.drawImage(aux[6], 0, 148); //cara
+            setTimeout(Loop(Desenhar1c24), TEMPO_FRAME); //duração do frame   
+        }
+        // cena 23
+        // cena 24
+
+        function Desenhar1c24() {
+
+            for (var j = 1; j <= 8; j++) {
+                imagens[j] = new Image();
+                imagens[j].src = "cena (24)/" + j + ".png";
+            }
+            cenas[24] = imagens;
+
+            aux = cenas[24];
+            context.drawImage(aux[6], 0, 0); //fundo
+            context.drawImage(aux[5], 0, 0); //escada
+            context.drawImage(aux[1], 0, 160); //cara 
+            context.drawImage(aux[3], 0, 160); //mato
+            setTimeout(Loop(Desenhar2c24), TEMPO_FRAME); //duração do frame
+
+        }
+
+        function Desenhar2c24() {
+            context.drawImage(aux[6], 0, 0); //fundo
+            context.drawImage(aux[5], 0, 0); //escada
+            context.drawImage(aux[2], 0, 160); //cara 
+            context.drawImage(aux[4], 0, 160); //mato
+            setTimeout(Loop(Desenhar3c24), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c24() {
+            context.drawImage(aux[6], 0, 0); //fundo
+            context.drawImage(aux[5], 0, 0); //escada
+            context.drawImage(aux[2], 0, 160); //cara 
+            context.drawImage(aux[4], 0, 160); //mato
+            setTimeout(Loop(Desenhar2c25), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar2c25() {
+            context.drawImage(aux[7], 0, 0); //fundo
+
+            setTimeout(Loop(Desenhar3c25), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar3c25() {
+            context.drawImage(aux[7], 0, 0); //fundo
+
+            setTimeout(Loop(Desenhar4c25), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar4c25() {
+            context.drawImage(aux[7], 0, 0); //fundo
+
+            setTimeout(Loop(Desenhar5c25), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar5c25() {
+            context.drawImage(aux[7], 0, 0); //fundo
+
+            setTimeout(Loop(Desenhar2c26), TEMPO_FRAME); //duração do frame
+        }
+
+        function Desenhar2c26() {
+            context.drawImage(aux[8], 0, 0); //fundo
+
+            setTimeout(Loop(Desenhar2c26), TEMPO_FRAME); //duração do frame
+        }
+
+        //cena24 
+    </script>
+</head>
+
+<body onload="Iniciar()">
+    <canvas id="canvas" width="800" height="600">
+    </canvas>
+</body>
+
+</html>
