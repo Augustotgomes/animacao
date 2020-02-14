@@ -105,13 +105,6 @@
         }
        
 
-        function IniciarAnimacao(){
-            aux = cenas[1];
-            context.drawImage(aux[17], 0, 0); //fundo
-            setTimeout(Loop(IniciarAnimacao), TEMPO_FRAME); //duração do frame
-            
-        }
-
         function VerificaTeclaPressionada(e) {
             
             somMusica.play();
