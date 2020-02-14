@@ -25,14 +25,16 @@
                 for (var j = 1; j <= QTD_IMG; j++) {
                     imagens[j] = new Image();
                     imagens[j].src = "cena (" + i + ")/" + j + ".png";
+                   
                     
                 }
                 cenas[i] = imagens;
             }
-            ConfiguraSons();
+             ConfiguraSons();
             
 
-            Loop(Desenhar00c1);
+
+             Loop(Desenhar00c1);
 
         }
 
@@ -40,9 +42,12 @@
           
            
             somMusica = new Audio();
-            somMusica.src = './sound/audio.mpeg';
-            somMusica.play();    
+            somMusica.src='./sound/audio.wav';
+            somMusica.volume=1;
+            somMusica.load();
+          
             
+           
         }
 
         
@@ -95,7 +100,22 @@
 
             aux = cenas[1];
             context.drawImage(aux[15], 0, 0); //fundo
-            setTimeout(Loop(Desenhar1c1), TEMPO_FRAME); //duração do frame
+            
+           
+        }
+       
+
+        function IniciarAnimacao(){
+            aux = cenas[1];
+            context.drawImage(aux[17], 0, 0); //fundo
+            setTimeout(Loop(IniciarAnimacao), TEMPO_FRAME); //duração do frame
+            
+        }
+
+        function VerificaTeclaPressionada(e) {
+            
+            somMusica.play();
+            Desenhar1c1();
         }
 
         function Desenhar1c1() {
@@ -129,6 +149,8 @@
             setTimeout(Loop(Desenhar1c2), TEMPO_FRAME);
         }
         // cena 1
+
+
         // cena 2    
         function Desenhar1c2() {
 
@@ -379,7 +401,8 @@
             context.drawImage(aux[62], 47, 124); //grama
             setTimeout(Loop(Desenhar1c3), TEMPO_FRAME);
         }
-        // cena 2    
+        // cena 2   
+
         // cena 3  
         function Desenhar1c3() {
 
@@ -475,6 +498,7 @@
             setTimeout(Loop(Desenhar1c4), TEMPO_FRAME); //duração do frame
         }
         // cena 3    
+
         // cena 4  
         function Desenhar1c4() {
 
@@ -592,6 +616,7 @@
             setTimeout(Loop(Desenhar1c6), TEMPO_FRAME); //duração do frame
         }
         // cena 5
+
         // cena 6
         function Desenhar1c6() {
 
@@ -644,6 +669,7 @@
             setTimeout(Loop(Desenhar1c7), TEMPO_FRAME); //duração do frame
         }
         // cena 6
+
         // cena 7
         function Desenhar1c7() {
 
@@ -707,6 +733,7 @@
             setTimeout(Loop(Desenhar1c8), TEMPO_FRAME); //duração do frame
         }
         // cena 7
+
         // cena 8
         function Desenhar1c8() {
 
@@ -776,7 +803,8 @@
             context.drawImage(aux[12], 0, -36); //cara
             setTimeout(Loop(Desenhar1c9), TEMPO_FRAME); //duração do frame
         }
-        // cena 8
+        //cena8
+
         //cena9
         function Desenhar1c9() {
 
@@ -835,7 +863,8 @@
         }
 
         //cena10
-        // cena 11
+
+        //cena11
         function Desenhar1c11() {
 
             for (var j = 1; j <= 11; j++) {
@@ -896,7 +925,8 @@
             context.drawImage(aux[11], 12, 40); //cara
             setTimeout(Loop(Desenhar1c12), TEMPO_FRAME); //duração do frame
         }
-        // cena 11
+        //cena11
+
         //cena12
 
         function Desenhar1c12() {
@@ -968,6 +998,7 @@
             setTimeout(Loop(Desenhar1c13), TEMPO_FRAME); //duração do frame
         }
         //cena12
+
         //cena13
 
         function Desenhar1c13() {
@@ -997,6 +1028,7 @@
             setTimeout(Loop(Desenhar1c14), TEMPO_FRAME); //duração do frame
         }
         //cena13
+
         //cena14
 
         function Desenhar1c14() {
@@ -1111,7 +1143,8 @@
             setTimeout(Loop(Desenhar1c15), TEMPO_FRAME); //duração do frame
         }
         //cena14
-        // cena 15
+
+        //cena15
         function Desenhar1c15() {
 
             for (var j = 1; j <= 18; j++) {
@@ -1210,19 +1243,7 @@
             setTimeout(Loop(Desenhar1c121), TEMPO_FRAME); //duração do frame
         }
 
-        /* function Desenhar16c15(){ 
-            context.drawImage(aux[17], 0, 0);//cara
-            setTimeout(Loop(Desenhar17c15),TEMPO_FRAME);//duração do frame
-		}
-            
-        function Desenhar17c15(){ 
-            context.drawImage(aux[18], 0, 0);//cara
-            setTimeout(Loop(Desenhar1c19),TEMPO_FRAME);//duração do frame
-		}*/
-        // cena 15
-
-
-        // cena 16
+       // cena 121
 
         function Desenhar1c121() {
 
@@ -1292,7 +1313,9 @@
             context.drawImage(aux[11], 40, 40); //caras
             setTimeout(Loop(Desenhar1c131), TEMPO_FRAME); //duração do frame
         }
+        //cena121
 
+        //cena131
 
         function Desenhar1c131() {
 
@@ -1321,6 +1344,9 @@
             setTimeout(Loop(Desenhar1c141), TEMPO_FRAME); //duração do frame
         }
 
+        //cena131
+
+        //cena141
 
         function Desenhar1c141() {
 
@@ -1360,8 +1386,6 @@
             context.drawImage(aux[7], 18, -65); //caras
             setTimeout(Loop(Desenhar6c141), TEMPO_FRAME); //duração do frame
         }
-
-
 
         function Desenhar6c141() {
             context.drawImage(aux[2], 0, 0); //escada
@@ -1435,10 +1459,10 @@
             setTimeout(Loop(Desenhar1c17), TEMPO_FRAME); //duração do frame
         }
 
-        // cena 16
-        // cena 17
-        function Desenhar1c17() {
+        //cena141
 
+        //cena 17
+        function Desenhar1c17() {
 
             context.drawImage(aux[21], 0, 0); //cara
             setTimeout(Loop(Desenhar2c17), TEMPO_FRAME); //duração do frame   
@@ -1446,11 +1470,11 @@
 
         function Desenhar2c17() {
 
-
             context.drawImage(aux[21], 0, 0); //cara
             setTimeout(Loop(Desenhar1c18), TEMPO_FRAME); //duração do frame   
         }
         // cena 17
+
         // cena 18
         function Desenhar1c18() {
 
@@ -1758,7 +1782,8 @@
             context.drawImage(aux[48], 0, 30); //cara
             setTimeout(Loop(Desenhar1c20), TEMPO_FRAME); //duração do frame   
         }
-        // cena 19
+        //cena19
+
         //cena20
 
         function Desenhar1c20() {
@@ -1924,8 +1949,10 @@
             context.drawImage(aux[13], 0, 0); //caras
             setTimeout(Loop(Desenhar1c22), TEMPO_FRAME); //duração do frame
         }
-        //cena 21
-        // cena 22
+        //cena21
+
+        //cena22
+
         function Desenhar1c22() {
 
             for (var j = 1; j <= 13; j++) {
@@ -2005,6 +2032,7 @@
             setTimeout(Loop(Desenhar1c23), TEMPO_FRAME); //duração do frame   
         }
         // cena 22
+
         // cena 23
         function Desenhar1c23() {
 
@@ -2039,6 +2067,7 @@
             setTimeout(Loop(Desenhar1c24), TEMPO_FRAME); //duração do frame   
         }
         // cena 23
+
         // cena 24
 
         function Desenhar1c24() {
@@ -2108,8 +2137,9 @@
     </script>
 </head>
 
-<body onload="Iniciar()">
-    <canvas id="canvas" width="800" height="600">
+<body onload="Iniciar()" onkeydown="VerificaTeclaPressionada(event);">
+  
+    <canvas id="canvas" width="800" height="600" >
     </canvas>
 </body>
 
